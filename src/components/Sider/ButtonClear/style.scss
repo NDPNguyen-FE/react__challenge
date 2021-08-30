@@ -1,0 +1,12 @@
+@import "/src/style/reset.scss";
+
+.buttonClear {
+  @include paddingY(1rem);
+  text-align: center;
+
+  button {
+    @include paddingX(3rem);
+    @include paddingY(0.5rem);
+    cursor: pointer;
+  }
+}

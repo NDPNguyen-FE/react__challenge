@@ -1,0 +1,26 @@
+@import "/src/style/reset.scss";
+
+.filterCategories {
+  .left-2 {
+    margin-left: 1rem;
+  }
+
+  &__text {
+    &:hover {
+      cursor: pointer;
+      color: $color-red;
+    }
+  }
+
+  &__text ~ &__item {
+    display: none;
+  }
+
+  .active, .subActive {
+    font-weight: bold;
+  }
+
+  .active ~ &__item {
+    display: block;
+  }
+}
