@@ -1,0 +1,5 @@
+@import "/src/style/reset.scss";
+
+.filterType {
+  @include paddingY(1rem);
+}

@@ -1,0 +1,8 @@
+@import "/src/style/reset.scss";
+
+.sort {
+    &__container {
+        display: flex;
+        justify-content:space-between;
+    }
+}

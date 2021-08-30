@@ -1,0 +1,6 @@
+@import '/src/style/reset.scss' ;
+
+.panigation {
+    @include paddingY(1rem);
+    text-align: center;
+}

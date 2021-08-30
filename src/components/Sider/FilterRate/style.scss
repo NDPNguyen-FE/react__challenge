@@ -1,0 +1,9 @@
+@import "/src//style/reset.scss";
+
+.filterRate {
+  @include paddingY(1rem);
+
+  .star {
+    color: $color-yellow;
+  }
+}

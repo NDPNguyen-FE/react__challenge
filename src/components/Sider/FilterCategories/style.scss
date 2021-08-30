@@ -1,0 +1,17 @@
+@import "/src/style/reset.scss";
+
+.filterCategories {
+  .left-2 {
+    margin-left: 2rem;
+  }
+
+  &__text {
+    &:hover {
+      cursor: pointer;
+      color: $color-red;
+    }
+  }
+
+  .active {
+  }
+}
