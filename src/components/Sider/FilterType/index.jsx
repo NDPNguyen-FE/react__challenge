@@ -1,44 +1,51 @@
 import React from "react";
 import "./style.scss";
 
-const data = [
-  {
-    type: "Trend cases(457)",
-    checked: false,
-  },
-  {
-    type: "Ult protection cases(393)",
-    checked: false,
-  },
-  {
-    type: "Ink cartridges(249)",
-    checked: false,
-  },
-  {
-    type: "Business cases(217)",
-    checked: false,
-  },
-  {
-    type: "Connectivity(181)",
-    checked: true,
-  },
-];
-
 function FilterType(props) {
+  const { allProducts, changeType } = props;
+
+  const getType = (value) => {
+    let valueType = [];
+
+    valueType = value.reduce((obj, item) => {
+      if (!obj[item.type]) {
+        obj[item.type] = 0;
+      }
+      obj[item.type]++;
+      return obj;
+    }, {});
+
+    let listType = { ...valueType };
+    listType = Object.entries(listType)
+      .sort((a, b) => b[1] - a[1])
+      .splice(0, 5)
+      .map(([key, value]) => {
+        return { key: key, value: value, checked: false };
+      });
+
+    return listType;
+  };
+
+  let types = getType(allProducts);
+
   const showType = (datas) => {
-    return datas.map((data, index) => {
+    return datas.map((data, value) => {
       return (
-        <div className="filterType__checknox" key={index}>
-          <input type="checkbox" defaultChecked={data.checked} />
-          {data.type}
+        <div className='filterType__checkbox' key={value}>
+          <input
+            type='checkbox'
+            value={data.key}
+            onChange={(e) => changeType(e.target.value)}
+          />
+          {data.key} ({data.value})
         </div>
       );
     });
   };
   return (
-    <div className="filterType">
+    <div className='filterType'>
       <h3>Type</h3>
-      {showType(data)}
+      {showType(types)}
     </div>
   );
 }

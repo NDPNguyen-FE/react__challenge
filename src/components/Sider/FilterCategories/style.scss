@@ -2,7 +2,7 @@
 
 .filterCategories {
   .left-2 {
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
 
   &__text {
@@ -12,6 +12,12 @@
     }
   }
 
-  .active {
+  &__text ~ &__item {
+    display: none;
+  }
+
+
+  .active ~ &__item {
+    display: block;
   }
 }

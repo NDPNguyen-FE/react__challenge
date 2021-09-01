@@ -2,6 +2,11 @@
 
 .filterRate {
   @include paddingY(1rem);
+  cursor: pointer;
+
+  &:hover {
+    color: $color-red;
+  }
 
   .star {
     color: $color-yellow;

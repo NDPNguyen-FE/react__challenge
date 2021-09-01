@@ -1,0 +1,35 @@
+@import "/src//style//reset.scss";
+
+.filterPrice {
+    
+    &__item {
+        cursor: pointer;
+
+        &:hover {
+            color: $color-red;
+        }
+    }
+
+    &__form {
+        display: flex;
+
+        span {
+            @include paddingX(0.5rem);
+        }
+
+        .form__group {
+            input {
+                @include marginX(0.2rem);
+                @include border($color-border, 0.1rem, all);
+                width: 3rem;
+                outline: none;
+            }
+        }
+
+        button {
+            @include paddingX(0.5rem);
+            border-radius: 2rem;
+            cursor: pointer;
+        }
+    }    
+}

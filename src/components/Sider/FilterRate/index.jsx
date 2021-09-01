@@ -15,13 +15,20 @@ export const showStar = (rate) => {
 };
 
 function FilterRate(props) {
+  const { allProducts, changeRate } = props;
+
   const showRate = () => {
     let results = [];
     for (let i = 4; i > 0; i--) {
       results.push(
-        <div className='filterRate__star' key={i}>
+        <div
+          className='filterRate__star'
+          onClick={() => {
+            changeRate(i);
+          }}
+          key={i}>
           {showStar(i)}
-          <span className='filterRate__text'> & Up 160000</span>
+          <span className='filterRate__text'> & Up 16,000</span>
         </div>
       );
     }
